@@ -1,0 +1,53 @@
+@import 'styles/variables.scss';
+@import 'styles/typography.scss';
+
+.section {
+    min-height: calc(100vh - #{$headerHeight});
+}
+
+.mainPart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 200px;
+
+    .itemDescription {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-top: 110px;
+
+        .title {
+            font-size: 100px;
+            line-height: 100px;
+            font-weight: 700;
+
+            @include gradientText('#fff', '#9A9996');
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 300;
+            opacity: 0.8;
+            margin: 16px 0;
+        }
+
+        .button {
+            align-self: flex-start;
+        }
+    }
+
+    .itemImage {
+        position: relative;
+        z-index: 1;
+
+        .light {
+            position: absolute;
+            z-index: 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(234, 163, 7, 0) 60%)
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.nav {
+    display: flex;
+    align-items: center;
+
+    .navList {
+        display: flex;
+
+        .listItem {
+            font-size: 16px;
+            line-height: 24px;
+            font-weight: 300;
+            text-transform: uppercase;
+            opacity: 0.8;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+        .listItem + .listItem {
+            margin-left: 80px;
+        }
+
+        .active {
+            opacity: 1;
+            font-weight: 400;
+        }
+    }
+}
