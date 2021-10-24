@@ -19,6 +19,7 @@
             font-size: 100px;
             line-height: 100px;
             font-weight: 700;
+            text-transform: uppercase;
 
             @include gradientText('#fff', '#9A9996');
         }

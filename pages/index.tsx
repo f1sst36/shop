@@ -5,12 +5,10 @@ import {MainPage} from "../components/pages/MainPage/MainPage";
 import React from "react";
 import {WithRedux} from "../components/redux/WithRedux";
 import {EAsync} from "../enum/EAsync";
+import {smartphonesForMainScreen} from "../database/temp";
+import {RootState} from "../store/store";
 
-interface MainProps {
-    preloadedState: any;
-}
-
-const Main: NextPage<MainProps> = ({preloadedState}) => {
+const Main: NextPage<{ preloadedState: RootState }> = ({preloadedState}) => {
     return (
         <WithRedux preloadedState={preloadedState}>
             <div>
@@ -21,19 +19,23 @@ const Main: NextPage<MainProps> = ({preloadedState}) => {
                 </Head>
 
                 <PageLayout>
-                    <MainPage/>
+                    <MainPage preloadedState={preloadedState}/>
                 </PageLayout>
             </div>
         </WithRedux>
     )
 }
 
-export const getStaticProps = () => {
+export const getStaticProps = async () => {
     return {
         props: {
             preloadedState: {
                 mainPageState: {
-                    mainScreenSmartphones: [], loadingState: EAsync.ERROR
+                    mainScreen: {
+                        mainScreenSmartphones: smartphonesForMainScreen,
+                        loadingState: EAsync.SUCCESS,
+                        activeSmartphoneIndex: 0,
+                    }
                 }
             }
         }

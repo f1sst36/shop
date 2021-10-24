@@ -1,0 +1,1 @@
+export const MAIN_SCREEN_SLIDER_ITEMS_COUNT = 4;

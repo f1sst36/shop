@@ -1,21 +1,28 @@
 import React from "react";
+import cx from 'classnames';
 import styles from './Slider.module.scss';
 import Image from 'next/image';
-import {useTypedSelector} from "../../../../../hooks/redux";
-import {EAsync} from "../../../../../enum/EAsync";
+import {CroppedSmartphoneType} from "../../../../../models/smartphone";
+import {mainPageController} from "../../../../../store/reducers/mainPage/mainPageController";
+import {useTypedDispatch} from "../../../../../hooks/redux";
 
-export const Slider: React.FC = () => {
-    const {mainScreenSmartphones, loadingState} = useTypedSelector(store => store.mainPageState)
+interface SliderProps {
+    smartphonesList: CroppedSmartphoneType[],
+    activeSmartphoneIndex: number;
+}
 
-    if (loadingState === EAsync.ERROR || !mainScreenSmartphones.length) return null;
+export const Slider: React.FC<SliderProps> = ({smartphonesList, activeSmartphoneIndex}) => {
+    const dispatch = useTypedDispatch();
+    const {setActiveSmartphoneForSlider} = mainPageController;
 
     return <div className={styles.slider}>
         <div className={styles.line}>
             <div className={styles.thumb}/>
         </div>
         <ul className={styles.items}>
-            {mainScreenSmartphones && mainScreenSmartphones.map(item => (
-                <li className={styles.item} key={item.id}>
+            {smartphonesList.map((item, index) => (
+                <li onClick={() => setActiveSmartphoneForSlider(dispatch, index)}
+                    className={cx(styles.item, index === activeSmartphoneIndex && styles.active)} key={item.id}>
                     <Image width={120} height={120} layout={'fixed'} src={item.mainImage} alt={item.name}/>
                     <span className={styles.name}>{item.name}</span>
                 </li>

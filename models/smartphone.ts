@@ -6,3 +6,5 @@ export interface Smartphone {
     description: string
     price: number
 }
+
+export type CroppedSmartphoneType = Pick<Smartphone, 'id' | 'name' | 'description' | 'mainImage'>;

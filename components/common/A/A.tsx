@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import styles from './A.module.scss';
 
 interface AProps {
     text: string
@@ -8,6 +9,6 @@ interface AProps {
 
 export const A: React.FC<AProps> = ({text, href}) => {
     return <Link href={href}>
-        <a>{text}</a>
+        <a className={styles.a}>{text}</a>
     </Link>
 }

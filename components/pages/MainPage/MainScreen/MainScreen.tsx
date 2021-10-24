@@ -4,30 +4,35 @@ import {Container} from "../../../layout/Container/Container";
 import styles from './MainScreen.module.scss';
 import {Button} from "../../../common/Button/Button";
 import {Slider} from "./Slider/Slider";
+import {RootState} from "../../../../store/store";
+import {MAIN_SCREEN_SLIDER_ITEMS_COUNT} from "../../../../constants/mainPage";
+import {useCSTypedSelector} from "../../../../hooks/redux";
 
-export const MainScreen: React.FC = () => {
+export const MainScreen: React.FC<{ preloadedState: RootState }> = ({preloadedState}) => {
+    const {mainScreenSmartphones, activeSmartphoneIndex} = useCSTypedSelector(preloadedState).mainPageState.mainScreen;
+    const activeSmartphone = activeSmartphoneIndex === null ? mainScreenSmartphones[0] : mainScreenSmartphones[activeSmartphoneIndex];
+
     return <section className={styles.section}>
         <Container>
             <div className={styles.mainPart}>
                 <div className={styles.itemDescription}>
                     <div>
-                        <h1 className={styles.title}>BANANA</h1>
-                        <p className={styles.description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Doloremque eligendi fuga ipsam ipsum
-                            nisi. Aspernatur delectus enim esse eveniet expedita facere fuga incidunt inventore iusto
-                            nulla
-                            obcaecati similique, tempora tempore ut voluptates. Aliquam id odio, officia officiis optio
-                            quasi repellendus.</p>
+                        <h1 className={styles.title}>{activeSmartphone.name}</h1>
+                        <p className={styles.description}>{activeSmartphone.description}</p>
                     </div>
-                    <Button className={styles.button}>Подробнее</Button>
+                    <Button className={styles.button}>Подробнее [link]</Button>
                 </div>
                 <div className={styles.itemImage}>
                     <div className={styles.light}/>
-                    <Image src={'/static/images/mainPage/mainScreen/phones.png'} width={600} height={600}
-                           alt={'Smartphone'}/>
+                    <Image src={activeSmartphone.mainImage} width={600} height={600}
+                           alt={activeSmartphone.name}/>
                 </div>
                 <div>
-                    <Slider/>
+                    {mainScreenSmartphones.length === MAIN_SCREEN_SLIDER_ITEMS_COUNT &&
+                    <Slider
+                        smartphonesList={mainScreenSmartphones}
+                        activeSmartphoneIndex={activeSmartphoneIndex || 0}
+                    />}
                 </div>
             </div>
             <div>
