@@ -64,3 +64,12 @@
         }
     }
 }
+
+.advantages {
+    display: flex;
+    margin-top: 96px;
+
+    & > div {
+        margin-right: 32px;
+    }
+}

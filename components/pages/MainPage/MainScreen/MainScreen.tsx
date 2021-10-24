@@ -7,6 +7,7 @@ import {Slider} from "./Slider/Slider";
 import {RootState} from "../../../../store/store";
 import {MAIN_SCREEN_SLIDER_ITEMS_COUNT} from "../../../../constants/mainPage";
 import {useCSTypedSelector} from "../../../../hooks/redux";
+import {AdvantageBlock} from "./AdvantageBlock/AdvantageBlock";
 
 export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({serverSideRootState}) => {
     const {mainScreenSmartphones, activeSmartphoneIndex} = useCSTypedSelector(serverSideRootState).mainPageState.mainScreen;
@@ -25,7 +26,7 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                 </div>
                 <div className={styles.itemImage}>
                     <div className={styles.light}/>
-                    <Image src={activeSmartphone.mainImage} objectFit={"contain"} width={600}
+                    <Image src={activeSmartphone.mainImage} quality={100} objectFit={"contain"} width={600}
                            height={600}
                            alt={activeSmartphone.name}/>
                 </div>
@@ -38,7 +39,26 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                 </div>
             </div>
             <div>
+                <div className={styles.advantages}>
+                    <AdvantageBlock
+                        icon={'/static/icons/mainPage/mainScreen/sun.svg'}
+                        title={'Conditions'}
+                        text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eveniet hic inventore ipsa!'}
+                    />
+                    <AdvantageBlock
+                        icon={'/static/icons/mainPage/mainScreen/quality.svg'}
+                        title={'Quality'}
+                        text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eveniet hic inventore ipsa'}
+                    />
+                    <AdvantageBlock
+                        icon={'/static/icons/mainPage/mainScreen/delivery.svg'}
+                        title={'Delivery'}
+                        text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eveniet hic inventore ipsa'}
+                    />
+                </div>
+                <div>
 
+                </div>
             </div>
         </Container>
     </section>
