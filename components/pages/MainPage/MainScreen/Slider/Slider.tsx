@@ -15,15 +15,17 @@ export const Slider: React.FC<SliderProps> = ({smartphonesList, activeSmartphone
     const dispatch = useTypedDispatch();
     const {setActiveSmartphoneForSlider} = mainPageController;
 
+    const thumbTopOffset = activeSmartphoneIndex * 25;
+
     return <div className={styles.slider}>
         <div className={styles.line}>
-            <div className={styles.thumb}/>
+            <div style={{top: `${thumbTopOffset}%`}} className={styles.thumb}/>
         </div>
         <ul className={styles.items}>
             {smartphonesList.map((item, index) => (
                 <li onClick={() => setActiveSmartphoneForSlider(dispatch, index)}
                     className={cx(styles.item, index === activeSmartphoneIndex && styles.active)} key={item.id}>
-                    <Image width={120} height={120} layout={'fixed'} src={item.mainImage} alt={item.name}/>
+                    <Image width={120} height={120} objectFit={"contain"} src={item.mainImage} alt={item.name}/>
                     <span className={styles.name}>{item.name}</span>
                 </li>
             ))}

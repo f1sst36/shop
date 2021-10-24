@@ -8,9 +8,9 @@ import {EAsync} from "../enum/EAsync";
 import {smartphonesForMainScreen} from "../database/temp";
 import {RootState} from "../store/store";
 
-const Main: NextPage<{ preloadedState: RootState }> = ({preloadedState}) => {
+const Main: NextPage<{ serverSideRootState: RootState }> = ({serverSideRootState}) => {
     return (
-        <WithRedux preloadedState={preloadedState}>
+        <WithRedux preloadedState={serverSideRootState}>
             <div>
                 <Head>
                     <title>Главная</title>
@@ -19,7 +19,7 @@ const Main: NextPage<{ preloadedState: RootState }> = ({preloadedState}) => {
                 </Head>
 
                 <PageLayout>
-                    <MainPage preloadedState={preloadedState}/>
+                    <MainPage serverSideRootState={serverSideRootState}/>
                 </PageLayout>
             </div>
         </WithRedux>
@@ -29,7 +29,7 @@ const Main: NextPage<{ preloadedState: RootState }> = ({preloadedState}) => {
 export const getStaticProps = async () => {
     return {
         props: {
-            preloadedState: {
+            serverSideRootState: {
                 mainPageState: {
                     mainScreen: {
                         mainScreenSmartphones: smartphonesForMainScreen,

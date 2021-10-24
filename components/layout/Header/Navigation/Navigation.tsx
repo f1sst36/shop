@@ -11,7 +11,7 @@ export const Navigation: React.FC = () => {
         <ul className={styles.navList}>
             {NAVIGATION_PATHS.map((path) => (
                 <li className={cx(styles.listItem, router.pathname === path.url && styles.active)} key={path.name}>
-                    <A text={path.name} href={path.url}/>
+                    <A href={path.url}>{path.name}</A>
                 </li>
             ))}
         </ul>

@@ -3,6 +3,7 @@
 
 .section {
     min-height: calc(100vh - #{$headerHeight});
+    padding-top: 48px;
 }
 
 .mainPart {
@@ -13,7 +14,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding-top: 110px;
+        padding-top: 96px;
 
         .title {
             font-size: 100px;
@@ -24,12 +25,22 @@
             @include gradientText('#fff', '#9A9996');
         }
 
+        .subTitle {
+            font-size: 40px;
+            line-height: 40px;
+            font-weight: 500;
+
+            @include gradientText('#fff', '#9A9996');
+        }
+
         .description {
             font-size: 18px;
             line-height: 24px;
             font-weight: 300;
             opacity: 0.8;
-            margin: 16px 0;
+            margin: 32px 0;
+
+            @include croppedText(9);
         }
 
         .button {
@@ -40,6 +51,7 @@
     .itemImage {
         position: relative;
         z-index: 1;
+        margin-right: 16px;
 
         .light {
             position: absolute;

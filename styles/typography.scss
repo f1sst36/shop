@@ -3,3 +3,10 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+@mixin croppedText($countLines){
+    -webkit-line-clamp: #{$countLines};
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

@@ -8,8 +8,8 @@ import {RootState} from "../../../../store/store";
 import {MAIN_SCREEN_SLIDER_ITEMS_COUNT} from "../../../../constants/mainPage";
 import {useCSTypedSelector} from "../../../../hooks/redux";
 
-export const MainScreen: React.FC<{ preloadedState: RootState }> = ({preloadedState}) => {
-    const {mainScreenSmartphones, activeSmartphoneIndex} = useCSTypedSelector(preloadedState).mainPageState.mainScreen;
+export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({serverSideRootState}) => {
+    const {mainScreenSmartphones, activeSmartphoneIndex} = useCSTypedSelector(serverSideRootState).mainPageState.mainScreen;
     const activeSmartphone = activeSmartphoneIndex === null ? mainScreenSmartphones[0] : mainScreenSmartphones[activeSmartphoneIndex];
 
     return <section className={styles.section}>
@@ -18,13 +18,15 @@ export const MainScreen: React.FC<{ preloadedState: RootState }> = ({preloadedSt
                 <div className={styles.itemDescription}>
                     <div>
                         <h1 className={styles.title}>{activeSmartphone.name}</h1>
+                        <h4 className={styles.subTitle}>{activeSmartphone.subName}</h4>
                         <p className={styles.description}>{activeSmartphone.description}</p>
                     </div>
                     <Button className={styles.button}>Подробнее [link]</Button>
                 </div>
                 <div className={styles.itemImage}>
                     <div className={styles.light}/>
-                    <Image src={activeSmartphone.mainImage} width={600} height={600}
+                    <Image src={activeSmartphone.mainImage} objectFit={"contain"} width={600}
+                           height={600}
                            alt={activeSmartphone.name}/>
                 </div>
                 <div>
