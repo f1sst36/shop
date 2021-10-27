@@ -1,9 +1,9 @@
-import React, {useState} from "react";
+import React, {useCallback, useState} from "react";
 import cx from 'classnames';
 import {throttle} from 'lodash';
 import {Container} from "../../../layout/Container/Container";
 import styles from './Carousel.module.scss';
-import {carouselController} from "../../../../store/reducers/mainPage/carousel/carouselController";
+import {carouselController} from "../../../../store/reducers/mainPage/carouselController";
 
 // TODO - temp data
 const cards = [
@@ -28,23 +28,17 @@ export const Carousel: React.FC = () => {
     const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
     const {classNameForCardByIndex, nextCardIndex, prevCardIndex} = carouselController;
 
-    const slideToPrevCard = throttle(() => {
-        console.log('click')
-        setCurrentCardIndex(prevCardIndex(currentCardIndex, cards.length))
-    }, 1000);
-
-    const slideToNextCard = throttle(() => {
-        console.log('click')
-        setCurrentCardIndex(nextCardIndex(currentCardIndex, cards.length))
-    }, 1000);
+    const slideTo = useCallback(throttle((newCurrentCardIndex: number) => {
+        setCurrentCardIndex(newCurrentCardIndex);
+    }, 1000), []);
 
     return <section>
         <Container>
             <h2>Популярные товары</h2>
-            <button onClick={slideToPrevCard}>
+            <button onClick={() => slideTo(prevCardIndex(currentCardIndex, cards.length))}>
                 {'<'}
             </button>
-            <button onClick={slideToNextCard}>
+            <button onClick={() => slideTo(nextCardIndex(currentCardIndex, cards.length))}>
                 {'>'}
             </button>
             <div className={styles.carousel}>

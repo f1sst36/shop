@@ -2,8 +2,16 @@
 
 .header {
     position: fixed;
+    z-index: 10;
     width: 100%;
     height: $headerHeight;
+    background: rgba(26,26,26,1);
+
+    transition: 0.2s;
+}
+
+.transparent {
+    background: transparent;
 }
 
 .container {

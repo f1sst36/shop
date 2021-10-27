@@ -1,8 +1,8 @@
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
-import {mainScreenSlice} from "./reducers/mainPage/mainScreen/mainScreenSlice";
+import {mainPageSlice} from "./reducers/mainPage/mainPageSlice";
 
 const rootReducer = combineReducers({
-    mainPageState: mainScreenSlice.reducer,
+    mainPageState: mainPageSlice.reducer,
 })
 
 export const setupStore = (preloadedState?: any) => {

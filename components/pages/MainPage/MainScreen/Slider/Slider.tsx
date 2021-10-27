@@ -3,7 +3,7 @@ import cx from 'classnames';
 import styles from './Slider.module.scss';
 import Image from 'next/image';
 import {CroppedSmartphoneType} from "../../../../../models/smartphone";
-import {mainScreenController} from "../../../../../store/reducers/mainPage/mainScreen/mainScreenController";
+import {mainScreenController} from "../../../../../store/reducers/mainPage/mainScreenController";
 import {useTypedDispatch} from "../../../../../hooks/redux";
 
 interface SliderProps {

@@ -1,21 +1,25 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {EAsync} from "../../../../enum/EAsync";
-import {CroppedSmartphoneType} from "../../../../models/smartphone";
+import {EAsync} from "../../../enum/EAsync";
+import {CroppedSmartphoneType} from "../../../models/smartphone";
 
-interface MainScreenState {
-    mainScreenSmartphones: CroppedSmartphoneType[];
-    loadingState: EAsync;
-    activeSmartphoneIndex: number | null;
+interface MainPageState {
+    mainScreen: {
+        mainScreenSmartphones: CroppedSmartphoneType[];
+        loadingState: EAsync;
+        activeSmartphoneIndex: number | null;
+    }
 }
 
-const initialState: MainScreenState = {
-    mainScreenSmartphones: [],
-    loadingState: EAsync.IDLE,
-    activeSmartphoneIndex: null,
+const initialState: MainPageState = {
+    mainScreen: {
+        mainScreenSmartphones: [],
+        loadingState: EAsync.IDLE,
+        activeSmartphoneIndex: null,
+    }
 }
 
-export const mainScreenSlice = createSlice({
-    name: 'mainScreen',
+export const mainPageSlice = createSlice({
+    name: 'mainPage',
     initialState,
     reducers: {
         // TODO - клиентская логика запроса телефонов для главного экрана (походу не нужна)
@@ -29,7 +33,7 @@ export const mainScreenSlice = createSlice({
         //     }
         // },
         setActiveSmartphoneForSlider(state, action: PayloadAction<number>) {
-            state.activeSmartphoneIndex = action.payload;
+            state.mainScreen.activeSmartphoneIndex = action.payload;
         }
     },
 })
