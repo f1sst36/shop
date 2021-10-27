@@ -3,7 +3,7 @@ import cx from 'classnames';
 import styles from './Slider.module.scss';
 import Image from 'next/image';
 import {CroppedSmartphoneType} from "../../../../../models/smartphone";
-import {mainPageController} from "../../../../../store/reducers/mainPage/mainPageController";
+import {mainScreenController} from "../../../../../store/reducers/mainPage/mainScreen/mainScreenController";
 import {useTypedDispatch} from "../../../../../hooks/redux";
 
 interface SliderProps {
@@ -13,7 +13,7 @@ interface SliderProps {
 
 export const Slider: React.FC<SliderProps> = ({smartphonesList, activeSmartphoneIndex}) => {
     const dispatch = useTypedDispatch();
-    const {setActiveSmartphoneForSlider} = mainPageController;
+    const {setActiveSmartphoneForSlider} = mainScreenController;
 
     const thumbTopOffset = activeSmartphoneIndex * 25;
 

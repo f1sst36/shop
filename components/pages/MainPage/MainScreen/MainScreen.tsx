@@ -1,5 +1,6 @@
 import React from "react";
 import Image from 'next/image';
+import cx from 'classnames';
 import {Container} from "../../../layout/Container/Container";
 import styles from './MainScreen.module.scss';
 import {Button} from "../../../common/Button/Button";
@@ -26,9 +27,16 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                 </div>
                 <div className={styles.itemImage}>
                     <div className={styles.light}/>
-                    <Image src={activeSmartphone.mainImage} quality={100} objectFit={"contain"} width={600}
-                           height={600}
-                           alt={activeSmartphone.name}/>
+                    {mainScreenSmartphones.map(smartphone => (
+                        <Image key={smartphone.id}
+                               className={cx(styles.image, activeSmartphone.id === smartphone.id && styles.activeImage)}
+                               src={smartphone.mainImage}
+                               quality={90}
+                               objectFit={"contain"}
+                               layout={'fill'}
+                               alt={smartphone.name}
+                        />
+                    ))}
                 </div>
                 <div>
                     {mainScreenSmartphones.length === MAIN_SCREEN_SLIDER_ITEMS_COUNT &&

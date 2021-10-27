@@ -1,12 +1,12 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import {PageLayout} from "../components/layout/PageLayout/PageLayout";
-import {MainPage} from "../components/pages/MainPage/MainPage";
+import {PageLayout} from "components/layout/PageLayout/PageLayout";
+import {MainPage} from "components/pages/MainPage/MainPage";
 import React from "react";
-import {WithRedux} from "../components/redux/WithRedux";
-import {EAsync} from "../enum/EAsync";
-import {smartphonesForMainScreen} from "../database/temp";
-import {RootState} from "../store/store";
+import {WithRedux} from "components/redux/WithRedux";
+import {EAsync} from "enum/EAsync";
+import {smartphonesForMainScreen} from "database/temp";
+import {RootState} from "store/store";
 
 const Main: NextPage<{ serverSideRootState: RootState }> = ({serverSideRootState}) => {
     return (

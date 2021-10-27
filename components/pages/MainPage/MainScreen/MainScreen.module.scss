@@ -53,6 +53,14 @@
         z-index: 1;
         margin-right: 16px;
 
+        .image {
+            display: none !important;
+        }
+
+        .activeImage {
+            display: block !important;
+        }
+
         .light {
             position: absolute;
             z-index: 0;
