@@ -4,8 +4,14 @@
 
     .navList {
         display: flex;
+        align-items: center;
+        height: 100%;
 
         .listItem {
+            position: relative;
+            display: flex;
+            height: 100%;
+            align-items: center;
             font-size: 16px;
             line-height: 24px;
             font-weight: 300;
@@ -14,6 +20,20 @@
 
             &:hover {
                 opacity: 1;
+            }
+
+            .activeLine {
+                position: absolute;
+                top: 0;
+                left: -12px;
+                box-sizing: unset;
+                background-color: #fff;
+                width: 100%;
+                padding: 0 12px;
+                height: 3px;
+                border-bottom-right-radius: 3px;
+                border-bottom-left-radius: 3px;
+                box-shadow: 0px 4px 8px 0px rgba(255, 255, 255, 0.4);
             }
         }
 
