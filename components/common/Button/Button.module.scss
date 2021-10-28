@@ -1,6 +1,8 @@
+@import 'styles/variables';
+
 .button {
     //background-image: linear-gradient(59deg, rgba(242,204,0,1) 0%, rgba(234,163,7,1) 50%, rgba(242,204,0,1) 100%);
-    background-image: linear-gradient(59deg, rgba(234,163,7,1) 25%, rgba(242,204,0,1) 50%, rgba(234,163,7,1) 75%);
+    background-image: linear-gradient(59deg, $mythical_1 25%, $mythical_2 50%, $mythical_1 75%);
     background-size: 200%;
     background-position: left;
     border: none;
@@ -27,4 +29,21 @@
     .text {
         display: flex;
     }
+
+    &--secondary {
+        background: $dark_4;
+        box-shadow: 0 8px 24px -6px rgba(0,0,0,.4);
+
+        &:hover {
+            box-shadow: 0 8px 8px -6px rgba(0,0,0,.4)
+        }
+
+        &:active {
+            box-shadow: 0 8px 2px -6px rgba(0,0,0,.3)
+        }
+    }
+}
+
+.link {
+    max-width: max-content;
 }

@@ -1,0 +1,51 @@
+@import 'styles/variables';
+
+.section {
+    background: linear-gradient(45deg, $mythical_1 0%, $mythical_2 100%);
+    margin: 72px 0 32px 0;
+}
+
+.container {
+    position: relative;
+}
+
+.subContainer {
+    overflow: hidden;
+    position: relative;
+}
+
+.circle {
+    position: absolute;
+    right: 0px;
+    top: -32px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #2F2F2F 0%, #3A3A39 100%);
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    padding: 64px 0;
+    max-width: 60%;
+
+    .title {
+        font-size: 64px;
+        line-height: 72px;
+        font-weight: 600;
+    }
+
+    .description {
+        margin: 32px 0;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 300;
+    }
+}
+
+.imageWrapper {
+    position: absolute;
+    right: -86px;
+    top: -86px;
+}

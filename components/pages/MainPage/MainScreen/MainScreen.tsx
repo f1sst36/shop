@@ -23,7 +23,7 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                         <h4 className={styles.subTitle}>{activeSmartphone.subName}</h4>
                         <p className={styles.description}>{activeSmartphone.description}</p>
                     </div>
-                    <Button className={styles.button}>Подробнее [link]</Button>
+                    <Button className={styles.button}>Подробнее</Button>
                 </div>
                 <figure className={styles.itemImage}>
                     {mainScreenSmartphones.map(smartphone => (
@@ -62,9 +62,6 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                         title={'Delivery'}
                         text={'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum eveniet hic inventore ipsa'}
                     />
-                </div>
-                <div>
-
                 </div>
             </div>
         </Container>

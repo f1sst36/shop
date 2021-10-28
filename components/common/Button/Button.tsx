@@ -16,6 +16,6 @@ export const Button: React.FC<ButtonProps> = ({children, variant = 'primary', si
         <span className={styles.text}>{children}</span>
     </button>
 
-    if (to) return <A href={to}>{button}</A>
+    if (to) return <A className={styles.link} href={to}>{button}</A>
     return button;
 }
