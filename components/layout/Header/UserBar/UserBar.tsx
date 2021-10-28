@@ -4,6 +4,9 @@ import styles from './UserBar.module.scss';
 
 export const UserBar: React.FC = () => {
     return <div className={styles.userBar}>
-        <Image src={'/static/icons/cart.svg'} alt='cart icon' width={32} height={32}/>
+        <div className={styles.cartWrapper}>
+            <div className={styles.count}>2</div>
+            <Image src={'/static/icons/cart.svg'} alt='cart icon' width={26} height={26}/>
+        </div>
     </div>
 }

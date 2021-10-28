@@ -25,8 +25,7 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                     </div>
                     <Button className={styles.button}>Подробнее [link]</Button>
                 </div>
-                <div className={styles.itemImage}>
-                    <div className={styles.light}/>
+                <figure className={styles.itemImage}>
                     {mainScreenSmartphones.map(smartphone => (
                         <Image key={smartphone.id}
                                className={cx(styles.image, activeSmartphone.id === smartphone.id && styles.activeImage)}
@@ -37,7 +36,7 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({server
                                alt={smartphone.name}
                         />
                     ))}
-                </div>
+                </figure>
                 <div>
                     {mainScreenSmartphones.length === MAIN_SCREEN_SLIDER_ITEMS_COUNT &&
                     <Slider

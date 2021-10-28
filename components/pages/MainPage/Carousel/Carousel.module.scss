@@ -30,22 +30,24 @@
     .mainItem {
         left: 50%;
         transform: translateX(-50%) scale(1.25);
-        z-index: 2;
+        z-index: 3;
         box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.5);
         background-color: green;
     }
 
     .leftItem {
         left: 0;
+        z-index: 2;
     }
 
     .rightItem {
         right: 0;
+        z-index: 2;
     }
 
     .hiddenItem {
         visibility: hidden;
-        opacity: 0;
+        //opacity: 0;
         transform: scale(0.8);
     }
 }

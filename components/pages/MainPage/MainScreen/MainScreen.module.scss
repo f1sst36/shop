@@ -60,16 +60,6 @@
         .activeImage {
             display: block !important;
         }
-
-        .light {
-            position: absolute;
-            z-index: 0;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, rgba(234, 163, 7, 0) 60%)
-        }
     }
 }
 

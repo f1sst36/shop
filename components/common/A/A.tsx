@@ -5,7 +5,7 @@ import styles from './A.module.scss';
 
 interface AProps {
     href: string
-    className: string
+    className?: string
 }
 
 export const A: React.FC<AProps> = ({href, className, children}) => {
