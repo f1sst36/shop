@@ -1,6 +1,5 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import {PageLayout} from "../../components/layout/PageLayout/PageLayout";
 
 const Catalog: NextPage = () => {
     return (
@@ -11,9 +10,7 @@ const Catalog: NextPage = () => {
                 <link rel="icon" href="/favicon.ico"/>
             </Head>
 
-            <PageLayout>
-                <h1>Catalog</h1>
-            </PageLayout>
+            <h1>Catalog</h1>
         </div>
     )
 }

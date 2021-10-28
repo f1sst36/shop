@@ -1,6 +1,5 @@
 import type {NextPage} from 'next'
 import Head from 'next/head'
-import {PageLayout} from "components/layout/PageLayout/PageLayout";
 import {MainPage} from "components/pages/MainPage/MainPage";
 import React from "react";
 import {WithRedux} from "components/redux/WithRedux";
@@ -18,9 +17,7 @@ const Main: NextPage<{ serverSideRootState: RootState }> = ({serverSideRootState
                     <link rel="icon" href="/favicon.ico"/>
                 </Head>
 
-                <PageLayout>
-                    <MainPage serverSideRootState={serverSideRootState}/>
-                </PageLayout>
+                <MainPage serverSideRootState={serverSideRootState}/>
             </div>
         </WithRedux>
     )

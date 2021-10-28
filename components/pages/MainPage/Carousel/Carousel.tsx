@@ -1,28 +1,12 @@
 import React, {useCallback, useState} from "react";
 import cx from 'classnames';
+import Image from 'next/image';
 import {throttle} from 'lodash';
 import {Container} from "../../../layout/Container/Container";
 import styles from './Carousel.module.scss';
 import {carouselController} from "../../../../store/reducers/mainPage/carouselController";
-
-// TODO - temp data
-const cards = [
-    {
-        id: 1,
-    },
-    {
-        id: 2,
-    },
-    {
-        id: 3,
-    },
-    {
-        id: 4,
-    },
-    {
-        id: 5,
-    },
-]
+import {Dots} from "./Dots/Dots";
+import {smartphonesForCarousel} from "../../../../database/temp";
 
 export const Carousel: React.FC = () => {
     const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
@@ -30,24 +14,27 @@ export const Carousel: React.FC = () => {
 
     const slideTo = useCallback(throttle((newCurrentCardIndex: number) => {
         setCurrentCardIndex(newCurrentCardIndex);
-    }, 1000), []);
+    }, 1000, {trailing: false}), []);
 
-    return <section>
+    return <section className={styles.section}>
         <Container>
-            <h2>Популярные товары</h2>
-            <button onClick={() => slideTo(prevCardIndex(currentCardIndex, cards.length))}>
-                {'<'}
-            </button>
-            <button onClick={() => slideTo(nextCardIndex(currentCardIndex, cards.length))}>
-                {'>'}
-            </button>
+            <h2 className={styles.title}>Популярные товары</h2>
+            <Dots dotsCount={smartphonesForCarousel.length} activeDotIndex={currentCardIndex}/>
             <div className={styles.carousel}>
-                {cards.map((card, index) => (
+                {smartphonesForCarousel.map((card, index) => (
                     <div key={card.id}
-                         className={cx(styles.item, classNameForCardByIndex(currentCardIndex, index, cards.length, styles))}>
+                         className={cx(styles.item, classNameForCardByIndex(currentCardIndex, index, smartphonesForCarousel.length, styles))}>
                         {card.id}
                     </div>
                 ))}
+            </div>
+            <div className={styles.buttons}>
+                <button className={styles.slideButton} onClick={() => slideTo(prevCardIndex(currentCardIndex, smartphonesForCarousel.length))}>
+                    <Image className={styles.leftArrow} src={'/static/icons/up_arrow.svg'} width={24} height={24} alt={'left arrow'} />
+                </button>
+                <button className={styles.slideButton} onClick={() => slideTo(nextCardIndex(currentCardIndex, smartphonesForCarousel.length))}>
+                    <Image className={styles.rightArrow} src={'/static/icons/up_arrow.svg'} width={24} height={24} alt={'right arrow'} />
+                </button>
             </div>
         </Container>
     </section>
