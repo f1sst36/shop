@@ -5,7 +5,6 @@ import { CroppedSmartphoneType } from '../../../models/smartphone';
 interface MainPageState {
 	mainScreen: {
 		mainScreenSmartphones: CroppedSmartphoneType[];
-		loadingState: EAsync;
 		activeSmartphoneIndex: number | null;
 	};
 }
@@ -13,25 +12,16 @@ interface MainPageState {
 const initialState: MainPageState = {
 	mainScreen: {
 		mainScreenSmartphones: [],
-		loadingState: EAsync.IDLE,
 		activeSmartphoneIndex: null
 	}
 };
 
+// В Slice находится исключительно логика по изменению состояния RootState(Store)
+// Бизнес-логика лежит в Controller
 export const mainPageSlice = createSlice({
 	name: 'mainPage',
 	initialState,
 	reducers: {
-		// TODO - клиентская логика запроса телефонов для главного экрана (походу не нужна)
-		// fetchingMainScreenSmartphones(state) {
-		//     state.loadingState = EAsync.PENDING;
-		// },
-		// receivedMainScreenSmartphones(state, action: PayloadAction<{ loadingState: EAsync, smartphones: croppedSmartphoneType }>) {
-		//     state.loadingState = action.payload.loadingState;
-		//     if (state.loadingState === EAsync.SUCCESS) {
-		//         state.mainScreenSmartphones = action.payload.smartphones;
-		//     }
-		// },
 		setActiveSmartphoneForSlider(state, action: PayloadAction<number>) {
 			state.mainScreen.activeSmartphoneIndex = action.payload;
 		}
