@@ -4,7 +4,7 @@ $tablet: '(max-width: 1140px)';
 $laptop: '(max-width: 1440px)';
 
 @mixin respond-to($media) {
-    @media(#{$media}) {
-        @content;
-    }
+	@media (#{$media}) {
+		@content;
+	}
 }

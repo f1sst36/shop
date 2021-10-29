@@ -1,13 +1,13 @@
 @import 'styles/responsive.scss';
 
 .container {
-    max-width: 1400px;
-    margin: auto;
-    padding-left: 30px;
-    padding-right: 30px;
+	max-width: 1400px;
+	margin: auto;
+	padding-left: 30px;
+	padding-right: 30px;
 
-    @include respond-to($mobile) {
-        padding-left: 16px;
-        padding-right: 16px;
-    }
+	@include respond-to($mobile) {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
 }

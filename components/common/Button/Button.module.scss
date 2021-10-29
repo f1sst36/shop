@@ -1,49 +1,51 @@
 @import 'styles/variables';
 
 .button {
-    //background-image: linear-gradient(59deg, rgba(242,204,0,1) 0%, rgba(234,163,7,1) 50%, rgba(242,204,0,1) 100%);
-    background-image: linear-gradient(59deg, $mythical_1 25%, $mythical_2 50%, $mythical_1 75%);
-    background-size: 200%;
-    background-position: left;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 48px;
-    cursor: pointer;
-    outline: none;
-    color: #fff;
-    font-size: 20px;
-    line-height: 30px;
-    box-shadow: 0 8px 24px -8px rgba(92,0,151,.4), inset -2px -2px 2px rgba(0,0,0,.11), inset 2px 2px 2px hsla(0,0%,100%,.35), 0px 16px 32px rgba(255, 196, 0, 0.12);
-    font-family: inherit;
+	//background-image: linear-gradient(59deg, rgba(242,204,0,1) 0%, rgba(234,163,7,1) 50%, rgba(242,204,0,1) 100%);
+	background-image: linear-gradient(59deg, $mythical_1 25%, $mythical_2 50%, $mythical_1 75%);
+	background-size: 200%;
+	background-position: left;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 48px;
+	cursor: pointer;
+	outline: none;
+	color: #fff;
+	font-size: 20px;
+	line-height: 30px;
+	box-shadow: 0 8px 24px -8px rgba(92, 0, 151, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.11),
+		inset 2px 2px 2px hsla(0, 0%, 100%, 0.35), 0px 16px 32px rgba(255, 196, 0, 0.12);
+	font-family: inherit;
 
-    transition: 0.4s;
+	transition: 0.4s;
 
-    &:hover {
-        background-position: right;
-    }
+	&:hover {
+		background-position: right;
+	}
 
-    &:active {
-        box-shadow: 0 8px 24px -8px rgba(92,0,151,.4), inset -2px -2px 2px rgba(0,0,0,.11), inset 2px 2px 2px hsla(0,0%,100%,.35), 0px 6px 10px rgba(255, 196, 0, 0.08);
-    }
+	&:active {
+		box-shadow: 0 8px 24px -8px rgba(92, 0, 151, 0.4), inset -2px -2px 2px rgba(0, 0, 0, 0.11),
+			inset 2px 2px 2px hsla(0, 0%, 100%, 0.35), 0px 6px 10px rgba(255, 196, 0, 0.08);
+	}
 
-    .text {
-        display: flex;
-    }
+	.text {
+		display: flex;
+	}
 
-    &--secondary {
-        background: $dark_4;
-        box-shadow: 0 8px 24px -6px rgba(0,0,0,.4);
+	&--secondary {
+		background: $dark_4;
+		box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.4);
 
-        &:hover {
-            box-shadow: 0 8px 8px -6px rgba(0,0,0,.4)
-        }
+		&:hover {
+			box-shadow: 0 8px 8px -6px rgba(0, 0, 0, 0.4);
+		}
 
-        &:active {
-            box-shadow: 0 8px 2px -6px rgba(0,0,0,.3)
-        }
-    }
+		&:active {
+			box-shadow: 0 8px 2px -6px rgba(0, 0, 0, 0.3);
+		}
+	}
 }
 
 .link {
-    max-width: max-content;
+	max-width: max-content;
 }

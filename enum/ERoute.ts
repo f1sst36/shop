@@ -1,5 +1,5 @@
 export enum ERoute {
-    Main = '/',
-    Catalog = '/catalog',
-    Contacts = '/contacts',
+	Main = '/',
+	Catalog = '/catalog',
+	Contacts = '/contacts'
 }

@@ -2,72 +2,72 @@
 @import 'styles/typography.scss';
 
 .section {
-    min-height: calc(100vh - #{$headerHeight});
-    padding-top: 48px;
+	min-height: calc(100vh - #{$headerHeight});
+	padding-top: 48px;
 }
 
 .mainPart {
-    display: grid;
-    grid-template-columns: 1fr 1fr 200px;
+	display: grid;
+	grid-template-columns: 1fr 1fr 200px;
 
-    .itemDescription {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding-top: 96px;
+	.itemDescription {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding-top: 96px;
 
-        .title {
-            font-size: 100px;
-            line-height: 100px;
-            font-weight: 700;
-            text-transform: uppercase;
+		.title {
+			font-size: 100px;
+			line-height: 100px;
+			font-weight: 700;
+			text-transform: uppercase;
 
-            @include gradientText('#fff', '#9A9996');
-        }
+			@include gradientText('#fff', '#9A9996');
+		}
 
-        .subTitle {
-            font-size: 40px;
-            line-height: 40px;
-            font-weight: 500;
+		.subTitle {
+			font-size: 40px;
+			line-height: 40px;
+			font-weight: 500;
 
-            @include gradientText('#fff', '#9A9996');
-        }
+			@include gradientText('#fff', '#9A9996');
+		}
 
-        .description {
-            font-size: 18px;
-            line-height: 24px;
-            font-weight: 300;
-            opacity: 0.8;
-            margin: 32px 0;
+		.description {
+			font-size: 18px;
+			line-height: 24px;
+			font-weight: 300;
+			opacity: 0.8;
+			margin: 32px 0;
 
-            @include croppedText(9);
-        }
+			@include croppedText(9);
+		}
 
-        .button {
-            align-self: flex-start;
-        }
-    }
+		.button {
+			align-self: flex-start;
+		}
+	}
 
-    .itemImage {
-        position: relative;
-        z-index: 1;
-        margin-right: 16px;
+	.itemImage {
+		position: relative;
+		z-index: 1;
+		margin-right: 16px;
 
-        .image {
-            display: none !important;
-        }
+		.image {
+			display: none !important;
+		}
 
-        .activeImage {
-            display: block !important;
-        }
-    }
+		.activeImage {
+			display: block !important;
+		}
+	}
 }
 
 .advantages {
-    display: flex;
-    margin-top: 96px;
+	display: flex;
+	margin-top: 96px;
 
-    & > div {
-        margin-right: 32px;
-    }
+	& > div {
+		margin-right: 32px;
+	}
 }

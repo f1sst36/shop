@@ -1,13 +1,11 @@
-import React from "react"
-import cx from 'classnames'
-import styles from './Container.module.scss'
+import React from 'react';
+import cx from 'classnames';
+import styles from './Container.module.scss';
 
 interface ContainerProps {
-    containerClass?: string
+	containerClass?: string;
 }
 
-export const Container: React.FC<ContainerProps> = ({children, containerClass}) => {
-    return <div className={cx(containerClass, styles.container)}>
-        {children}
-    </div>
-}
+export const Container: React.FC<ContainerProps> = ({ children, containerClass }) => {
+	return <div className={cx(containerClass, styles.container)}>{children}</div>;
+};

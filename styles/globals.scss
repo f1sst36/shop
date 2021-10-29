@@ -2,37 +2,42 @@
 @import 'styles/variables.scss';
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html,
 body {
-    padding: 0;
-    margin: 0;
-    font-family: Muller, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    background: $background_gradient;
-    color: #fff;
+	padding: 0;
+	margin: 0;
+	font-family: Muller, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background: $background_gradient;
+	color: #fff;
 }
 
 a {
-    color: inherit;
-    text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 
 ul {
-    padding: 0;
-    margin: 0;
+	padding: 0;
+	margin: 0;
 
-    li {
-        list-style-type: none;
-    }
+	li {
+		list-style-type: none;
+	}
 }
 
-h1, h2, h3, h4, h5, h6 {
-    margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
 }
 
 p {
-    margin: 0;
+	margin: 0;
 }

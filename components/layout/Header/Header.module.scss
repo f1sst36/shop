@@ -1,21 +1,21 @@
 @import 'styles/variables.scss';
 
 .header {
-    position: fixed;
-    z-index: 10;
-    width: 100%;
-    height: $headerHeight;
-    background: rgba(26,26,26,1);
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	height: $headerHeight;
+	background: rgba(26, 26, 26, 1);
 
-    transition: 0.2s;
+	transition: 0.2s;
 }
 
 .transparent {
-    background: transparent;
+	background: transparent;
 }
 
 .container {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
 }

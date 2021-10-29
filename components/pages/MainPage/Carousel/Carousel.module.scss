@@ -1,90 +1,90 @@
 @import 'styles/variables';
 
 .section {
-    padding: 96px 0;
-    //background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, $dark_2 35%);
+	padding: 96px 0;
+	//background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, $dark_2 35%);
 
-    .title {
-        font-size: 40px;
-        line-height: 40px;
-        font-weight: 300;
-        text-align: center;
-    }
+	.title {
+		font-size: 40px;
+		line-height: 40px;
+		font-weight: 300;
+		text-align: center;
+	}
 }
 
 .carousel {
-    position: relative;
-    height: 400px;
-    margin-top: 80px;
+	position: relative;
+	height: 400px;
+	margin-top: 80px;
 
-    .item {
-        position: absolute;
-        z-index: 1;
-        width: 600px;
-        height: 350px;
-        background-color: tomato;
+	.item {
+		position: absolute;
+		z-index: 1;
+		width: 600px;
+		height: 350px;
+		background-color: tomato;
 
-        transition: ease 0.8s;
-    }
+		transition: ease 0.8s;
+	}
 
-    .mainItem {
-        left: 50%;
-        transform: translateX(-50%) scale(1.25);
-        z-index: 3;
-        box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.5);
-        background-color: green;
-    }
+	.mainItem {
+		left: 50%;
+		transform: translateX(-50%) scale(1.25);
+		z-index: 3;
+		box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.5);
+		background-color: green;
+	}
 
-    .leftItem {
-        left: 0;
-        z-index: 2;
-    }
+	.leftItem {
+		left: 0;
+		z-index: 2;
+	}
 
-    .rightItem {
-        right: 0;
-        z-index: 2;
-    }
+	.rightItem {
+		right: 0;
+		z-index: 2;
+	}
 
-    .hiddenItem {
-        visibility: hidden;
-        //opacity: 0;
-        transform: scale(0.8);
-    }
+	.hiddenItem {
+		visibility: hidden;
+		//opacity: 0;
+		transform: scale(0.8);
+	}
 }
 
 .buttons {
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 32px;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 32px;
 
-    .slideButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 46px;
-        height: 46px;
-        border-radius: 50%;
-        border: 2px solid #fff;
-        background: transparent;
-        outline: none;
-        cursor: pointer;
+	.slideButton {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 46px;
+		height: 46px;
+		border-radius: 50%;
+		border: 2px solid #fff;
+		background: transparent;
+		outline: none;
+		cursor: pointer;
 
-        transition: opacity 0.2s;
+		transition: opacity 0.2s;
 
-        &:hover {
-            opacity: 0.8;
-        }
-    }
+		&:hover {
+			opacity: 0.8;
+		}
+	}
 
-    .slideButton + .slideButton {
-        margin-left: 16px;
-    }
+	.slideButton + .slideButton {
+		margin-left: 16px;
+	}
 
-    .leftArrow {
-        transform: rotate(-90deg);
-    }
+	.leftArrow {
+		transform: rotate(-90deg);
+	}
 
-    .rightArrow {
-        transform: rotate(90deg);
-    }
+	.rightArrow {
+		transform: rotate(90deg);
+	}
 }

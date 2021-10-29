@@ -1,4 +1,4 @@
 export enum EWindowEvent {
-    Scroll = 'scroll',
-    Click = 'click'
+	Scroll = 'scroll',
+	Click = 'click'
 }
