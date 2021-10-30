@@ -37,37 +37,41 @@ export const smartphonesForMainScreen = [
 export const smartphonesForCarousel = [
 	{
 		id: 1,
-		name: 'name',
-		price: '9 990',
-		image: '',
+		name: 'Xiaomi redmi note 10',
+		priceWithoutSale: 10_990,
+		companyProducer: 'Xiaomi',
+		image: '/static/images/smartphones/xiaomi_redmi_note10.png',
 		sale: 20
 	},
 	{
 		id: 2,
-		name: 'name',
-		price: '9 990',
-		image: '',
-		sale: 20
+		name: 'Huawei P40',
+		priceWithoutSale: 39_990,
+		companyProducer: 'Huawei',
+		image: '/static/images/smartphones/huawei_p40.png'
 	},
 	{
 		id: 3,
-		name: 'name',
-		price: '9 990',
-		image: '',
-		sale: 20
+		name: 'Samsung S10',
+		priceWithoutSale: 46_990,
+		companyProducer: 'Samsung',
+		image: '/static/images/smartphones/samsung_s10.png',
+		sale: 18
 	},
 	{
 		id: 4,
-		name: 'name',
-		price: '9 990',
-		image: '',
-		sale: 20
+		name: 'iPhone 11 Pro Max',
+		priceWithoutSale: 72_990,
+		companyProducer: 'Apple',
+		image: '/static/images/smartphones/iphone11_pro_max.png',
+		sale: 10
 	},
 	{
 		id: 5,
-		name: 'name',
-		price: '9 990',
-		image: '',
-		sale: 20
+		name: 'iPhone 11 Pro Max',
+		priceWithoutSale: 72_990,
+		companyProducer: 'Apple',
+		image: '/static/images/smartphones/iphone11_pro_max.png',
+		sale: 10
 	}
 ];

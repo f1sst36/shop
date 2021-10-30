@@ -21,7 +21,15 @@ export const Button: React.FC<ButtonProps> = ({
 	...props
 }) => {
 	const button = (
-		<button className={cx(styles.button, className, styles[`button--${variant}`])} {...props}>
+		<button
+			className={cx(
+				styles.button,
+				className,
+				styles[`button--${variant}`],
+				styles[`button--${size}`]
+			)}
+			{...props}
+		>
 			<span className={styles.text}>{children}</span>
 		</button>
 	);

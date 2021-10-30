@@ -10,3 +10,7 @@
 	-webkit-box-orient: vertical;
 	overflow: hidden;
 }
+
+.silverGradientText {
+	@include gradientText('#fff', '#9A9996');
+}

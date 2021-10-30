@@ -50,7 +50,7 @@ export const Carousel: React.FC = () => {
 					<button
 						className={styles.slideButton}
 						onClick={() =>
-							slideTo(prevCardIndex(currentCardIndex, smartphonesForCarousel))
+							slideTo(prevCardIndex(currentCardIndex, smartphonesForCarousel.length))
 						}
 					>
 						<Image
@@ -64,7 +64,7 @@ export const Carousel: React.FC = () => {
 					<button
 						className={styles.slideButton}
 						onClick={() =>
-							slideTo(nextCardIndex(currentCardIndex, smartphonesForCarousel))
+							slideTo(nextCardIndex(currentCardIndex, smartphonesForCarousel.length))
 						}
 					>
 						<Image

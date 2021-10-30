@@ -26,8 +26,12 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({
 				<div className={styles.mainPart}>
 					<div className={styles.itemDescription}>
 						<div>
-							<h1 className={styles.title}>{activeSmartphone.name}</h1>
-							<h4 className={styles.subTitle}>{activeSmartphone.subName}</h4>
+							<h1 className={cx(styles.title, 'silverGradientText')}>
+								{activeSmartphone.name}
+							</h1>
+							<h4 className={cx(styles.subTitle, 'silverGradientText')}>
+								{activeSmartphone.subName}
+							</h4>
 							<p className={styles.description}>{activeSmartphone.description}</p>
 						</div>
 						<Button className={styles.button}>Подробнее</Button>
