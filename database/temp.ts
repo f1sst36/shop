@@ -37,6 +37,15 @@ export const smartphonesForMainScreen = [
 export const smartphonesForCarousel = [
 	{
 		id: 1,
+		name: 'iPhone 11 Pro Max',
+		priceWithoutSale: 72_990,
+		companyProducer: 'Apple',
+		feature: 'Новинка',
+		image: '/static/images/smartphones/iphone11_pro_max.png',
+		sale: 10
+	},
+	{
+		id: 2,
 		name: 'Xiaomi redmi note 10',
 		priceWithoutSale: 10_990,
 		companyProducer: 'Xiaomi',
@@ -45,7 +54,7 @@ export const smartphonesForCarousel = [
 		sale: 20
 	},
 	{
-		id: 2,
+		id: 3,
 		name: 'Huawei P40',
 		priceWithoutSale: 39_990,
 		companyProducer: 'Huawei',
@@ -54,7 +63,7 @@ export const smartphonesForCarousel = [
 		sale: null
 	},
 	{
-		id: 3,
+		id: 4,
 		name: 'Samsung S10',
 		priceWithoutSale: 46_990,
 		companyProducer: 'Samsung',
@@ -63,20 +72,11 @@ export const smartphonesForCarousel = [
 		sale: 18
 	},
 	{
-		id: 4,
-		name: 'iPhone 11 Pro Max',
-		priceWithoutSale: 72_990,
-		companyProducer: 'Apple',
-		feature: 'Лучшая цена',
-		image: '/static/images/smartphones/iphone11_pro_max.png',
-		sale: 10
-	},
-	{
 		id: 5,
 		name: 'iPhone 11 Pro Max',
 		priceWithoutSale: 72_990,
 		companyProducer: 'Apple',
-		feature: 'Новинка',
+		feature: 'Лучшая цена',
 		image: '/static/images/smartphones/iphone11_pro_max.png',
 		sale: 10
 	}

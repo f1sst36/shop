@@ -1,0 +1,26 @@
+@import 'styles/responsive';
+
+.overflow-ellipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.hidden-mobile {
+    @include respond-to($mobile) {
+        display: none !important;
+    }
+}
+
+.hidden-tablet {
+    @include respond-to($tablet) {
+        display: none !important;
+    }
+}
+
+@mixin hiddenScrollbar() {
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

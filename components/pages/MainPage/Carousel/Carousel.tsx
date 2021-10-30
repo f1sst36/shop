@@ -36,6 +36,7 @@ export const Carousel: React.FC = () => {
 							key={card.id}
 							className={cx(
 								styles.item,
+								styles.onTablet,
 								classNameForCardByIndex(
 									currentCardIndex,
 									index,
@@ -46,7 +47,7 @@ export const Carousel: React.FC = () => {
 						/>
 					))}
 				</div>
-				<div className={styles.buttons}>
+				<div className={cx(styles.buttons, 'hidden-tablet')}>
 					<button
 						className={styles.slideButton}
 						onClick={() =>

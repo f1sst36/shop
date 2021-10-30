@@ -12,7 +12,7 @@ export const Dots: React.FC<DotsProps> = ({ dotsCount, activeDotIndex }) => {
 	const array = range(dotsCount);
 	const leftOffset = (activeDotIndex / dotsCount) * 100;
 	return (
-		<ul className={styles.dots}>
+		<ul className={cx(styles.dots, 'hidden-tablet')}>
 			<div style={{ left: `${leftOffset}%` }} className={styles.activeDot} />
 			{array.map((_, index) => (
 				<li

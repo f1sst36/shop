@@ -1,13 +1,14 @@
 @import 'styles/responsive';
+@import 'styles/variables';
 
 .container {
 	max-width: 1400px;
 	margin: auto;
-	padding-left: 30px;
-	padding-right: 30px;
+	padding-left: $containerPadding;
+	padding-right: $containerPadding;
 
 	@include respond-to($mobile) {
-		padding-left: 16px;
-		padding-right: 16px;
+		padding-left: $containerPaddingMobile;
+		padding-right: $containerPaddingMobile;
 	}
 }

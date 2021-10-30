@@ -1,88 +1,157 @@
 @import 'styles/variables';
+@import 'styles/responsive';
+@import 'styles/utils';
 
 .section {
-	padding: 96px 0;
-	//background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, $dark_2 35%);
+    padding: 96px 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, $dark_2 35%);
 
-	.title {
-		font-size: 40px;
-		line-height: 40px;
-		font-weight: 300;
-		text-align: center;
-	}
+    @include respond-to($tablet) {
+        padding: 86px 0;
+    }
+
+    @include respond-to($mobile) {
+        padding: 48px 0;
+    }
+
+    .title {
+        font-size: 40px;
+        line-height: 40px;
+        font-weight: 300;
+        text-align: center;
+
+        @include respond-to($tablet) {
+            margin-bottom: 24px;
+        }
+
+        @include respond-to($mobile) {
+            font-size: 32px;
+            line-height: 32px;
+            margin-bottom: 12px;
+        }
+    }
 }
 
 .carousel {
-	position: relative;
-	height: 400px;
-	margin-top: 80px;
+    position: relative;
+    height: 400px;
+    padding-top: 48px;
+    box-sizing: unset;
 
-	.item {
-		position: absolute;
-		z-index: 1;
-		width: 600px;
-		height: 350px;
+    @include respond-to($tablet) {
+        display: block;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        height: unset;
 
-		transition: ease 0.8s;
-	}
+        padding: 32px $containerPadding 0 $containerPadding;
+        margin: 0 -#{$containerPadding};
 
-	.mainItem {
-		left: 50%;
-		transform: translateX(-50%) scale(1.25);
-		z-index: 3;
-		box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.5);
-	}
+        @include hiddenScrollbar();
+    }
 
-	.leftItem {
-		left: 0;
-		z-index: 2;
-	}
+    @include respond-to($mobile) {
+        padding: 32px $containerPaddingMobile 0 $containerPaddingMobile;
+        margin: 0 -#{$containerPaddingMobile};
+    }
 
-	.rightItem {
-		right: 0;
-		z-index: 2;
-	}
+    .item {
+        position: absolute;
+        z-index: 1;
+        width: 600px;
+        height: 350px;
 
-	.hiddenItem {
-		visibility: hidden;
-		opacity: 0;
-		transform: scale(0.8);
-	}
+        transition: ease 0.8s;
+
+        @include respond-to($tablet) {
+            width: 500px;
+            height: 330px;
+        }
+
+        @include respond-to($mobile) {
+            width: 400px;
+            height: 300px;
+        }
+    }
+
+    .mainItem {
+        left: 50%;
+        transform: translateX(-50%) scale(1.25);
+        z-index: 3;
+        box-shadow: 0 0 18px 0 rgba(0, 0, 0, 0.5);
+    }
+
+    .leftItem {
+        left: 0;
+        z-index: 2;
+    }
+
+    .rightItem {
+        right: 0;
+        z-index: 2;
+    }
+
+    .hiddenItem {
+        visibility: hidden;
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    .onTablet {
+        @include respond-to($tablet) {
+            position: relative;
+            left: unset;
+            right: unset;
+            visibility: visible;
+            opacity: 1;
+            transform: unset;
+            z-index: unset;
+            box-shadow: unset;
+            display: inline-block;
+        }
+    }
+
+    .onTablet + .onTablet {
+        @include respond-to($tablet) {
+            margin-left: 32px;
+        }
+    }
 }
 
 .buttons {
-	display: flex;
-	justify-content: flex-end;
-	margin-top: 32px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 32px;
 
-	.slideButton {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 46px;
-		height: 46px;
-		border-radius: 50%;
-		border: 2px solid #fff;
-		background: transparent;
-		outline: none;
-		cursor: pointer;
+    .slideButton {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        background: transparent;
+        outline: none;
+        cursor: pointer;
 
-		transition: opacity 0.2s;
+        transition: opacity 0.2s;
 
-		&:hover {
-			opacity: 0.8;
-		}
-	}
+        &:hover {
+            opacity: 0.8;
+        }
+    }
 
-	.slideButton + .slideButton {
-		margin-left: 16px;
-	}
+    .slideButton + .slideButton {
+        margin-left: 16px;
+    }
 
-	.leftArrow {
-		transform: rotate(-90deg);
-	}
+    .leftArrow {
+        transform: rotate(-90deg);
+    }
 
-	.rightArrow {
-		transform: rotate(90deg);
-	}
+    .rightArrow {
+        transform: rotate(90deg);
+    }
 }
