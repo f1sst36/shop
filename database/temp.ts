@@ -40,6 +40,7 @@ export const smartphonesForCarousel = [
 		name: 'Xiaomi redmi note 10',
 		priceWithoutSale: 10_990,
 		companyProducer: 'Xiaomi',
+		feature: 'Лучшая цена',
 		image: '/static/images/smartphones/xiaomi_redmi_note10.png',
 		sale: 20
 	},
@@ -48,13 +49,16 @@ export const smartphonesForCarousel = [
 		name: 'Huawei P40',
 		priceWithoutSale: 39_990,
 		companyProducer: 'Huawei',
-		image: '/static/images/smartphones/huawei_p40.png'
+		feature: 'Горячее предложение',
+		image: '/static/images/smartphones/huawei_p40.png',
+		sale: null
 	},
 	{
 		id: 3,
 		name: 'Samsung S10',
 		priceWithoutSale: 46_990,
 		companyProducer: 'Samsung',
+		feature: 'Новинка',
 		image: '/static/images/smartphones/samsung_s10.png',
 		sale: 18
 	},
@@ -63,6 +67,7 @@ export const smartphonesForCarousel = [
 		name: 'iPhone 11 Pro Max',
 		priceWithoutSale: 72_990,
 		companyProducer: 'Apple',
+		feature: 'Лучшая цена',
 		image: '/static/images/smartphones/iphone11_pro_max.png',
 		sale: 10
 	},
@@ -71,6 +76,7 @@ export const smartphonesForCarousel = [
 		name: 'iPhone 11 Pro Max',
 		priceWithoutSale: 72_990,
 		companyProducer: 'Apple',
+		feature: 'Новинка',
 		image: '/static/images/smartphones/iphone11_pro_max.png',
 		sale: 10
 	}

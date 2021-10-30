@@ -49,9 +49,8 @@
 		position: relative;
 		z-index: 2;
 
-		.new {
+		.feature {
 			font-size: 12px;
-			line-height: 14px;
 			font-weight: 400;
 			padding: 6px 10px;
 			border-radius: 14px;
@@ -68,12 +67,47 @@
 			margin: 24px 0 12px 0;
 		}
 
+		.prices {
+			display: flex;
+			flex-direction: column;
+
+			.oldPriceWrapper {
+				position: relative;
+				max-width: max-content;
+				margin-bottom: 4px;
+
+				.oldPrice {
+					font-size: 14px;
+					color: $dark_4;
+					opacity: 0.6;
+					font-weight: 500;
+				}
+
+				.line {
+					position: absolute;
+					z-index: 2;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%) rotate(-4deg);
+					width: calc(100% + 8px);
+					height: 2px;
+					border-radius: 12px;
+					background-color: #fff;
+				}
+			}
+		}
+
 		.price {
 			font-size: 16px;
 			line-height: 20px;
-			font-weight: 600;
+			font-weight: 700;
 			color: $dark_4;
-			margin-bottom: 24px;
+		}
+
+		.button {
+			position: absolute;
+			bottom: 0;
+			left: 0;
 		}
 	}
 
@@ -82,7 +116,7 @@
 		right: 24px;
 		bottom: 0;
 		font-size: 112px;
-		font-weight: 600;
+		font-weight: 700;
 		opacity: 0.05;
 		color: #000;
 		transform: rotate(-8deg);
