@@ -18,6 +18,14 @@
     }
 }
 
+.show-mobile {
+    display: none !important;
+
+    @include respond-to($mobile) {
+        display: block !important;
+    }
+}
+
 @mixin hiddenScrollbar() {
     scrollbar-width: none;
     &::-webkit-scrollbar {

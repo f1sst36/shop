@@ -8,6 +8,7 @@ import { Container } from '../Container/Container';
 import { EWindowEvent } from '../../../enum/EWindowEvent';
 import { WindowHandler } from '../../utils/WindowHandler/WindowHandler';
 import { throttle } from 'lodash';
+import { MobileMenu } from './MobileMenu/MobileMenu';
 
 export const Header: React.FC = () => {
 	const [isTransparent, setIsTransparent] = useState<boolean>(true);
@@ -22,8 +23,15 @@ export const Header: React.FC = () => {
 			<header className={cx(styles.header, isTransparent && styles.transparent)}>
 				<Container containerClass={styles.container}>
 					<Logo />
-					<Navigation />
-					<UserBar />
+					<div className={'hidden-mobile'}>
+						<Navigation />
+					</div>
+					<div className={'hidden-mobile'}>
+						<UserBar />
+					</div>
+					<div className={'show-mobile'}>
+						<MobileMenu />
+					</div>
 				</Container>
 			</header>
 		</>

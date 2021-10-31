@@ -1,4 +1,5 @@
-@import 'styles/variables.scss';
+@import 'styles/variables';
+@import 'styles/responsive';
 
 .header {
 	position: fixed;
@@ -8,6 +9,10 @@
 	background: rgba(26, 26, 26, 1);
 
 	transition: 0.2s;
+
+	@include respond-to($mobile) {
+		height: $headerHeightMobile;
+	}
 }
 
 .transparent {
@@ -18,4 +23,10 @@
 	height: 100%;
 	display: grid;
 	grid-template-columns: 1fr 3fr 1fr;
+	grid-template-rows: 100%;
+
+	@include respond-to($mobile) {
+		display: flex;
+		justify-content: space-between;
+	}
 }
