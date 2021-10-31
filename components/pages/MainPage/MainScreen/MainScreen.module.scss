@@ -1,9 +1,14 @@
-@import 'styles/variables.scss';
-@import 'styles/typography.scss';
+@import 'styles/variables';
+@import 'styles/typography';
+@import 'styles/responsive';
 
 .section {
 	min-height: calc(100vh - #{$headerHeight});
 	padding-top: 48px;
+
+	@include respond-to('min-height: 1081px') {
+		min-height: unset;
+	}
 }
 
 .mainPart {

@@ -30,9 +30,9 @@ export const AboutProduct: React.FC = () => {
 					<Image
 						className={styles.image}
 						src={'/static/images/mainPage/phones.png'}
-						width={600}
-						height={600}
-						quality={100}
+						layout={'fill'}
+						objectFit={'contain'}
+						quality={95}
 						alt={'phones'}
 					/>
 				</div>
