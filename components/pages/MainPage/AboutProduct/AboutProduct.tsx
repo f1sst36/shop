@@ -31,6 +31,7 @@ export const AboutProduct: React.FC = () => {
 						className={styles.image}
 						src={'/static/images/mainPage/phones.png'}
 						layout={'fill'}
+						priority
 						objectFit={'contain'}
 						quality={95}
 						alt={'phones'}

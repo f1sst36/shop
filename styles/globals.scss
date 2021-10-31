@@ -22,6 +22,10 @@ a {
 	text-decoration: none;
 }
 
+div {
+	-webkit-tap-highlight-color: transparent;
+}
+
 ul {
 	padding: 0;
 	margin: 0;
@@ -41,5 +45,9 @@ h6 {
 }
 
 p {
+	margin: 0;
+}
+
+figure {
 	margin: 0;
 }

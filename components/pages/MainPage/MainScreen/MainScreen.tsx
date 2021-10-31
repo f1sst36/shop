@@ -52,7 +52,7 @@ export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({
 							/>
 						))}
 					</figure>
-					<div>
+					<div className={styles.sliderWrapper}>
 						{mainScreenSmartphones.length === MAIN_SCREEN_SLIDER_ITEMS_COUNT && (
 							<Slider
 								smartphonesList={mainScreenSmartphones}

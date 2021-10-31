@@ -46,14 +46,14 @@
         height: unset;
 
         padding: 32px $containerPadding 0 $containerPadding;
-        margin: 0 -#{$containerPadding};
+        margin: 0 -$containerPadding;
 
         @include hiddenScrollbar();
     }
 
     @include respond-to($mobile) {
         padding: 32px $containerPaddingMobile 0 $containerPaddingMobile;
-        margin: 0 -#{$containerPaddingMobile};
+        margin: 0 -$containerPaddingMobile;
     }
 
     .item {

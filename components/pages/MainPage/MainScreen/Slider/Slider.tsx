@@ -32,13 +32,17 @@ export const Slider: React.FC<SliderProps> = ({ smartphonesList, activeSmartphon
 						)}
 						key={item.id}
 					>
-						<Image
-							width={120}
-							height={120}
-							objectFit={'contain'}
-							src={item.mainImage}
-							alt={item.name}
-						/>
+						<div className={styles.imageWrapper}>
+							<Image
+								className={styles.image}
+								// width={120}
+								// height={120}
+								layout={'fill'}
+								objectFit={'contain'}
+								src={item.mainImage}
+								alt={item.name}
+							/>
+						</div>
 						<span className={styles.name}>{item.name}</span>
 					</li>
 				))}
