@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     height: 100%;
-    
+
     .icon {
         cursor: pointer;
     }
@@ -15,11 +15,11 @@
     top: $headerHeightMobile + 8px;
     right: $containerPaddingMobile;
     width: 200px;
-    background: rgba(86, 86, 86, 0.9);
+    background: rgba(86, 86, 86, 0.98);
     //backdrop-filter: blur(4px);
     border-radius: 8px;
     box-shadow: $defaultShadow;
-    padding: 12px 0;
+    padding: 6px 0;
 
     transition: 0.2s;
     opacity: 0;
@@ -27,15 +27,18 @@
 
     .navItem {
         color: #fff;
-        font-size: 14px;
+        font-size: 16px;
         line-height: 22px;
         font-weight: 300;
         padding: 12px;
-        text-transform: uppercase;
+        opacity: 0.8;
+        //text-transform: uppercase;
     }
 
     .activeItem {
-        background-color: $dark_3;
+        //background-color: $dark_3;
+        //font-weight: 400;
+        opacity: 1;
     }
 
     .line {
@@ -43,11 +46,11 @@
         margin: 0 12px;
         height: 1px;
         background-color: #fff;
-        opacity: 0.2;
+        opacity: 0.15;
     }
 
     .userBar {
-        padding: 12px 12px 0 12px;
+        padding: 12px 12px 6px 12px;
     }
 }
 

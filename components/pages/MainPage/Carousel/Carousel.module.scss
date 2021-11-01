@@ -5,6 +5,7 @@
 .section {
     padding: 96px 0;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0) 35%, $dark_2 35%);
+    overflow: hidden;
 
     @include respond-to($tablet) {
         padding: 86px 0;
