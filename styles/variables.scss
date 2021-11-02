@@ -5,6 +5,7 @@ $dark_1: #222222;
 $dark_2: #333335;
 $dark_3: #636365;
 $dark_4: #3d3c41;
+$dark_5: rgba(26, 26, 26, 1);
 
 $primary_1: #ffc400;
 
@@ -18,7 +19,7 @@ $rain_2: #cdccca;
 $rain_3: #bcbbb9;
 $rain_4: #5b5b5a;
 
-$background_gradient: linear-gradient(59deg, rgba(26, 26, 26, 1) 0%, rgba(69, 69, 68, 1) 100%);
+$background_gradient: linear-gradient(59deg, $dark_5 0%, rgba(69, 69, 68, 1) 100%);
 $defaultShadow: 0 8px 24px -6px rgba(0, 0, 0, 0.4);
 
 $containerPadding: 30px;
