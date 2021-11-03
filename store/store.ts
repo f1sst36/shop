@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { mainPageSlice } from './reducers/mainPage/mainPageSlice';
+import { catalogSlice } from './reducers/catalog/catalogSlice';
 
 const rootReducer = combineReducers({
-	mainPageState: mainPageSlice.reducer
+	mainPageState: mainPageSlice.reducer,
+	catalogState: catalogSlice.reducer
 });
 
 export const setupStore = (preloadedState?: any) => {

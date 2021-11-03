@@ -20,5 +20,5 @@ export interface CarouselSmartphone {
 	companyProducer: string;
 	feature: string;
 	image: string;
-	sale: number;
+	sale: number | null;
 }
