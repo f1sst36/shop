@@ -10,8 +10,8 @@ export const MainPage: React.FC<{ serverSideRootState: RootState }> = ({ serverS
 		<>
 			<MainScreen serverSideRootState={serverSideRootState} />
 			<AboutProduct />
-			<Categories />
-			<Carousel />
+			<Categories serverSideRootState={serverSideRootState} />
+			<Carousel serverSideRootState={serverSideRootState} />
 		</>
 	);
 };

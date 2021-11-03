@@ -6,10 +6,12 @@ import { Container } from '../../../layout/Container/Container';
 import styles from './Carousel.module.scss';
 import { carouselController } from '../../../../store/reducers/mainPage/carouselController';
 import { Dots } from './Dots/Dots';
-import { smartphonesForCarousel } from '../../../../database/temp';
 import { Card } from './Card/Card';
+import { RootState } from '../../../../store/store';
+import { useCSTypedSelector } from '../../../../hooks/redux';
 
-export const Carousel: React.FC = () => {
+export const Carousel: React.FC<{ serverSideRootState: RootState }> = ({ serverSideRootState }) => {
+	const { smartphones } = useCSTypedSelector(serverSideRootState).mainPageState.carousel;
 	const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
 	const { classNameForCardByIndex, nextCardIndex, prevCardIndex } = carouselController;
 
@@ -28,9 +30,9 @@ export const Carousel: React.FC = () => {
 		<section className={styles.section}>
 			<Container>
 				<h2 className={styles.title}>Популярные товары</h2>
-				<Dots dotsCount={smartphonesForCarousel.length} activeDotIndex={currentCardIndex} />
+				<Dots dotsCount={smartphones.length} activeDotIndex={currentCardIndex} />
 				<div className={styles.carousel}>
-					{smartphonesForCarousel.map((card, index) => (
+					{smartphones.map((card, index) => (
 						<Card
 							product={card}
 							key={card.id}
@@ -40,7 +42,7 @@ export const Carousel: React.FC = () => {
 								classNameForCardByIndex(
 									currentCardIndex,
 									index,
-									smartphonesForCarousel.length,
+									smartphones.length,
 									styles
 								)
 							)}
@@ -50,9 +52,7 @@ export const Carousel: React.FC = () => {
 				<div className={cx(styles.buttons, 'hidden-tablet')}>
 					<button
 						className={styles.slideButton}
-						onClick={() =>
-							slideTo(prevCardIndex(currentCardIndex, smartphonesForCarousel.length))
-						}
+						onClick={() => slideTo(prevCardIndex(currentCardIndex, smartphones.length))}
 					>
 						<Image
 							className={styles.leftArrow}
@@ -64,9 +64,7 @@ export const Carousel: React.FC = () => {
 					</button>
 					<button
 						className={styles.slideButton}
-						onClick={() =>
-							slideTo(nextCardIndex(currentCardIndex, smartphonesForCarousel.length))
-						}
+						onClick={() => slideTo(nextCardIndex(currentCardIndex, smartphones.length))}
 					>
 						<Image
 							className={styles.rightArrow}

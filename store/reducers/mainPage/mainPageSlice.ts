@@ -1,11 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { EAsync } from '../../../enum/EAsync';
-import { CroppedSmartphoneType } from '../../../models/smartphone';
+import { CarouselSmartphone, CroppedSmartphoneType } from '../../../models/smartphone';
+import { Category } from '../../../models/category';
 
 interface MainPageState {
 	mainScreen: {
 		mainScreenSmartphones: CroppedSmartphoneType[];
 		activeSmartphoneIndex: number | null;
+	};
+	categories: Category[];
+	carousel: {
+		smartphones: CarouselSmartphone[];
 	};
 }
 
@@ -13,6 +17,10 @@ const initialState: MainPageState = {
 	mainScreen: {
 		mainScreenSmartphones: [],
 		activeSmartphoneIndex: null
+	},
+	categories: [],
+	carousel: {
+		smartphones: []
 	}
 };
 

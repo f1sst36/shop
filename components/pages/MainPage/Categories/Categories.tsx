@@ -2,9 +2,13 @@ import React from 'react';
 import styles from './Categories.module.scss';
 import { Container } from '../../../layout/Container/Container';
 import { CategoryItem } from './CategoryItem/CategoryItem';
-import { categories } from '../../../../database/temp';
+import { RootState } from '../../../../store/store';
+import { useCSTypedSelector } from '../../../../hooks/redux';
 
-export const Categories: React.FC = () => {
+export const Categories: React.FC<{ serverSideRootState: RootState }> = ({
+	serverSideRootState
+}) => {
+	const { categories } = useCSTypedSelector(serverSideRootState).mainPageState;
 	return (
 		<section className={styles.section}>
 			<Container>

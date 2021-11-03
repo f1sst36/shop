@@ -12,3 +12,13 @@ export type CroppedSmartphoneType = Pick<
 	Smartphone,
 	'id' | 'name' | 'subName' | 'description' | 'mainImage'
 >;
+
+export interface CarouselSmartphone {
+	id: number;
+	name: string;
+	priceWithoutSale: number;
+	companyProducer: string;
+	feature: string;
+	image: string;
+	sale: number;
+}

@@ -4,7 +4,7 @@ import { MainPage } from 'components/pages/MainPage/MainPage';
 import React from 'react';
 import { WithRedux } from 'components/redux/WithRedux';
 import { EAsync } from 'enum/EAsync';
-import { smartphonesForMainScreen } from 'database/temp';
+import { categories, smartphonesForCarousel, smartphonesForMainScreen } from 'database/temp';
 import { RootState } from 'store/store';
 
 const Main: NextPage<{ serverSideRootState: RootState }> = ({ serverSideRootState }) => {
@@ -32,6 +32,10 @@ export const getStaticProps = async () => {
 						mainScreenSmartphones: smartphonesForMainScreen,
 						loadingState: EAsync.SUCCESS,
 						activeSmartphoneIndex: 0
+					},
+					categories: categories,
+					carousel: {
+						smartphones: smartphonesForCarousel
 					}
 				}
 			}
