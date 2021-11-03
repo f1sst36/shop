@@ -35,8 +35,6 @@ export const Slider: React.FC<SliderProps> = ({ smartphonesList, activeSmartphon
 						<div className={styles.imageWrapper}>
 							<Image
 								className={styles.image}
-								// width={120}
-								// height={120}
 								layout={'fill'}
 								objectFit={'contain'}
 								src={item.mainImage}

@@ -81,3 +81,36 @@ export const smartphonesForCarousel = [
 		sale: 10
 	}
 ];
+
+export const categories = [
+	{
+		id: 1,
+		image: '/static/images/categories/smartphone-category.png',
+		name: 'Смартфоны'
+	},
+	{
+		id: 2,
+		image: '/static/images/categories/tablet-category.png',
+		name: 'Планшеты'
+	},
+	{
+		id: 3,
+		image: '/static/images/categories/accessory-category.png',
+		name: 'Аксессуары'
+	},
+	{
+		id: 4,
+		image: '/static/images/categories/smartphone-category.png',
+		name: 'Ноутбуки'
+	},
+	{
+		id: 5,
+		image: '/static/images/categories/tablet-category.png',
+		name: 'Часы'
+	},
+	{
+		id: 6,
+		image: '/static/images/categories/accessory-category.png',
+		name: 'Наушники'
+	}
+];
