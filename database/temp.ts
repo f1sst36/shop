@@ -100,17 +100,17 @@ export const categories = [
 	},
 	{
 		id: 4,
-		image: '/static/images/categories/smartphone-category.png',
+		image: '/static/images/categories/laptop-category.png',
 		name: 'Ноутбуки'
 	},
 	{
 		id: 5,
-		image: '/static/images/categories/tablet-category.png',
+		image: '/static/images/categories/watch-category.png',
 		name: 'Часы'
 	},
 	{
 		id: 6,
-		image: '/static/images/categories/accessory-category.png',
+		image: '/static/images/categories/headphones-category.png',
 		name: 'Наушники'
 	}
 ];
