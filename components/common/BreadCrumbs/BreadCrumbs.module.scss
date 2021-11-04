@@ -1,0 +1,39 @@
+@import 'styles/variables';
+@import 'styles/responsive';
+
+.breadCrumbs {
+    display: flex;
+    align-items: center;
+
+    .crumb {
+        display: flex;
+        align-items: center;
+
+        .link {
+            font-size: 16px;
+            line-height: 18px;
+            font-weight: 300;
+            color: #fff;
+
+            @include respond-to($mobile) {
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+
+        .emptyLink {
+            color: $rain_3;
+        }
+
+        .slash {
+            width: 6px;
+            height: 1px;
+            background-color: $rain_3;
+            margin-left: 5px;
+        }
+    }
+
+    .crumb + .crumb {
+        margin-left: 5px;
+    }
+}
