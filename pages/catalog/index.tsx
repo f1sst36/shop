@@ -15,7 +15,7 @@ const Catalog: NextPage<{ serverSideRootState: RootState }> = ({ serverSideRootS
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 
-				<CatalogPage serverSideRootState={serverSideRootState} />
+				<CatalogPage />
 			</div>
 		</WithRedux>
 	);
