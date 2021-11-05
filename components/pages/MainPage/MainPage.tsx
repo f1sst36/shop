@@ -1,17 +1,16 @@
 import React from 'react';
 import { MainScreen } from './MainScreen/MainScreen';
-import { RootState } from '../../../store/store';
 import { Carousel } from './Carousel/Carousel';
 import { AboutProduct } from './AboutProduct/AboutProduct';
 import { Categories } from './Categories/Categories';
 
-export const MainPage: React.FC<{ serverSideRootState: RootState }> = ({ serverSideRootState }) => {
+export const MainPage: React.FC = () => {
 	return (
 		<>
-			<MainScreen serverSideRootState={serverSideRootState} />
+			<MainScreen />
 			<AboutProduct />
-			<Categories serverSideRootState={serverSideRootState} />
-			<Carousel serverSideRootState={serverSideRootState} />
+			<Categories />
+			<Carousel />
 		</>
 	);
 };

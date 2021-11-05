@@ -3,7 +3,6 @@ import Head from 'next/head';
 import { MainPage } from 'components/pages/MainPage/MainPage';
 import React from 'react';
 import { WithRedux } from 'components/redux/WithRedux';
-import { EAsync } from 'enum/EAsync';
 import { categories, smartphonesForCarousel, smartphonesForMainScreen } from 'database/temp';
 import { RootState } from 'store/store';
 
@@ -17,20 +16,19 @@ const Main: NextPage<{ serverSideRootState: RootState }> = ({ serverSideRootStat
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
 
-				<MainPage serverSideRootState={serverSideRootState} />
+				<MainPage />
 			</div>
 		</WithRedux>
 	);
 };
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
 	return {
 		props: {
 			serverSideRootState: {
 				mainPageState: {
 					mainScreen: {
 						mainScreenSmartphones: smartphonesForMainScreen,
-						loadingState: EAsync.SUCCESS,
 						activeSmartphoneIndex: 0
 					},
 					categories: categories,

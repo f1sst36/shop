@@ -11,4 +11,14 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 	);
 };
 
+// export const getServerSideProps = async (appContext: AppContext) => {
+// 	return {
+// 		...appContext,
+// 		test: {
+// 			a: 1,
+// 			b: 2
+// 		}
+// 	};
+// };
+
 export default MyApp;

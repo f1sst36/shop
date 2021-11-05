@@ -5,16 +5,14 @@ import { Container } from '../../../layout/Container/Container';
 import styles from './MainScreen.module.scss';
 import { Button } from '../../../common/Button/Button';
 import { Slider } from './Slider/Slider';
-import { RootState } from '../../../../store/store';
 import { MAIN_SCREEN_SLIDER_ITEMS_COUNT } from '../../../../constants/mainPage';
-import { useCSTypedSelector } from '../../../../hooks/redux';
+import { useTypedSelector } from '../../../../hooks/redux';
 import { AdvantageBlock } from './AdvantageBlock/AdvantageBlock';
 
-export const MainScreen: React.FC<{ serverSideRootState: RootState }> = ({
-	serverSideRootState
-}) => {
-	const { mainScreenSmartphones, activeSmartphoneIndex } =
-		useCSTypedSelector(serverSideRootState).mainPageState.mainScreen;
+export const MainScreen: React.FC = () => {
+	const { mainScreenSmartphones, activeSmartphoneIndex } = useTypedSelector(
+		(store) => store.mainPageState.mainScreen
+	);
 	const activeSmartphone =
 		activeSmartphoneIndex === null
 			? mainScreenSmartphones[0]

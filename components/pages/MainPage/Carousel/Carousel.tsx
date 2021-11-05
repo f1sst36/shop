@@ -7,11 +7,10 @@ import styles from './Carousel.module.scss';
 import { carouselController } from '../../../../store/reducers/mainPage/carouselController';
 import { Dots } from './Dots/Dots';
 import { Card } from './Card/Card';
-import { RootState } from '../../../../store/store';
-import { useCSTypedSelector } from '../../../../hooks/redux';
+import { useTypedSelector } from '../../../../hooks/redux';
 
-export const Carousel: React.FC<{ serverSideRootState: RootState }> = ({ serverSideRootState }) => {
-	const { smartphones } = useCSTypedSelector(serverSideRootState).mainPageState.carousel;
+export const Carousel: React.FC = () => {
+	const { smartphones } = useTypedSelector((store) => store.mainPageState.carousel);
 	const [currentCardIndex, setCurrentCardIndex] = useState<number>(0);
 	const { classNameForCardByIndex, nextCardIndex, prevCardIndex } = carouselController;
 
